@@ -1,0 +1,24 @@
+<% provide(:title, "Aanpassen") %>
+<div class="row">
+  <div class="col-md-12">
+  <h3>Pas je profiel aan</h3>
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :Naam %>
+      <%= f.text_field :name %>
+
+      <%= f.label :Email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :Wachtwoord %>
+      <%= f.password_field :password %>
+
+      <%= f.label :Herhaal_Wachtwoord, "Confirm Password" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Wjzigingen opslaan", class: "btn btn-small btn-danger" %>
+    <% end %>
+
+  </div>
+</div>

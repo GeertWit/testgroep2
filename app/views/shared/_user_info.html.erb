@@ -1,0 +1,10 @@
+  <div class="span6">
+<h1>
+  <%= current_user.name %>
+</h1>
+<span>
+  <%= link_to "Bekijk mijn profiel", current_user %><br>
+
+  <%= pluralize(current_user.microposts.count, "geplaatste berichtjes") %>
+</span>
+</div>

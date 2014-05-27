@@ -1,0 +1,11 @@
+<li>
+  <span class="content"><%= micropost.content %></span>
+  <span class="timestamp">
+    <%= time_ago_in_words(micropost.created_at) %> geleden geplaats.
+  </span>
+  <% if current_user?(micropost.user) %>
+    <%= link_to "Verwijderen", micropost, method: :delete,
+                                     data: { confirm: "Oja?" },
+                                     title: micropost.content %>
+  <% end %>
+</li>

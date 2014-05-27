@@ -1,0 +1,42 @@
+<% provide(:title, 'Registreren') %>
+<div class="row">
+<div class="col-md-8">
+<h3>Registreer</h3>
+    <%= form_for(@user) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label "Voornaam" %>
+      <%= f.text_field :name, :placeholder => "Voornaam" %>
+
+      <%= f.label "Achternaam" %>
+      <%= f.text_field :last_name, :placeholder => "Achternaam" %>
+
+      <%= f.label "Email" %>
+      <%= f.text_field :email, :placeholder => "Email adres"  %>
+
+      <%= f.label "Geslacht" %>
+      <%= f.text_field :gender, :placeholder => "Geslacht"  %> 
+
+      <%= f.label "Wachtwoord" %>
+      <%= f.password_field :password, :placeholder => "Wachtwoord" %>
+
+      <%= f.label "Bevestig wachtwoord"%>
+      <%= f.password_field :password_confirmation,:placeholder => "Herhaal wachtwoord" %>
+
+      <%= f.submit "Maak account", class: "btn btn-md btn-primary" %>
+    <% end %>
+    </div>
+   
+  <div class="col-md-4">
+    <h3>Inloggen</h3>
+    <%= form_for(:session, url: sessions_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "Log in", class: "btn btn-md btn-primary" %>
+    <% end %>
+</div>
+</div>
